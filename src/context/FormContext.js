@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useReducer } from 'react';
 import { FORM_STEPS } from '../utils/constants';
 
-// Initial state
 const initialState = {
   currentStep: FORM_STEPS.PERSONAL_INFO,
   formData: {
@@ -16,7 +15,6 @@ const initialState = {
   isSubmitted: false
 };
 
-// Action types
 const ACTION_TYPES = {
   SET_CURRENT_STEP: 'SET_CURRENT_STEP',
   UPDATE_FORM_DATA: 'UPDATE_FORM_DATA',
@@ -26,7 +24,6 @@ const ACTION_TYPES = {
   RESET_FORM: 'RESET_FORM'
 };
 
-// Reducer function
 const formReducer = (state, action) => {
   switch (action.type) {
     case ACTION_TYPES.SET_CURRENT_STEP:
@@ -64,14 +61,11 @@ const formReducer = (state, action) => {
   }
 };
 
-// Create context
 const FormContext = createContext();
 
-// Context provider component
 export const FormProvider = ({ children }) => {
   const [state, dispatch] = useReducer(formReducer, initialState);
 
-  // Action creators
   const setCurrentStep = (step) => {
     dispatch({ type: ACTION_TYPES.SET_CURRENT_STEP, payload: step });
   };
@@ -113,7 +107,6 @@ export const FormProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use form context
 export const useForm = () => {
   const context = useContext(FormContext);
   if (!context) {

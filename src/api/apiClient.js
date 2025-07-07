@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Create axios instance with base configuration
 const apiClient = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
   timeout: 10000,
@@ -9,7 +8,6 @@ const apiClient = axios.create({
   },
 });
 
-// Request interceptor
 apiClient.interceptors.request.use(
   (config) => {
     console.log('Making API request:', config.method?.toUpperCase(), config.url);
@@ -20,7 +18,6 @@ apiClient.interceptors.request.use(
   }
 );
 
-// Response interceptor
 apiClient.interceptors.response.use(
   (response) => {
     console.log('API response received:', response.status);
@@ -29,16 +26,12 @@ apiClient.interceptors.response.use(
   (error) => {
     console.error('API error:', error.response?.status, error.message);
     
-    // Handle different error types
     if (error.response) {
-      // Server responded with error status
       const errorMessage = error.response.data?.message || 'Server error occurred';
       return Promise.reject(new Error(errorMessage));
     } else if (error.request) {
-      // Network error
       return Promise.reject(new Error('Network error. Please check your connection.'));
     } else {
-      // Other error
       return Promise.reject(new Error('An unexpected error occurred'));
     }
   }

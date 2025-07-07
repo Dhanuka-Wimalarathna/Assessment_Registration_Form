@@ -25,12 +25,10 @@ const Step2Security = () => {
     const { name, value } = e.target;
     updateFormData({ [name]: value });
     
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' });
     }
     
-    // Clear submit error when user makes changes
     if (submitError) {
       setSubmitError('');
     }
@@ -68,7 +66,6 @@ const Step2Security = () => {
     }
   };
 
-  // Check if step 2 is valid
   const isStep2Valid = () => {
     const validationErrors = validateStep2(formData);
     return Object.keys(validationErrors).length === 0;

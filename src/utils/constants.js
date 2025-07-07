@@ -1,7 +1,6 @@
-// Application constants
 export const FORM_STEPS = {
   PERSONAL_INFO: 1,
-  SECURITY: 2
+  SECURITY: 2,
 };
 
 export const STEP_LABELS = {

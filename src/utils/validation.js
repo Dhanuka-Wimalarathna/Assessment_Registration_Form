@@ -21,15 +21,15 @@ export const validateStep1 = (formData) => {
   const errors = {};
   
   if (!validateRequired(formData.fullName)) {
-    errors.fullName = 'Full name is required';
+    errors.fullName = 'Full name is required'; //validation for full name
   }
   
   if (!validateRequired(formData.email)) {
     errors.email = 'Email is required';
   } else if (!validateEmail(formData.email)) {
-    errors.email = 'Please enter a valid email address';
+    errors.email = 'Please enter a valid email address';  //validation for email
   }
-  
+
   return errors;
 };
 
@@ -40,13 +40,13 @@ export const validateStep2 = (formData) => {
   if (!validateRequired(formData.password)) {
     errors.password = 'Password is required';
   } else if (!validatePassword(formData.password)) {
-    errors.password = 'Password must be at least 6 characters long';
+    errors.password = 'Password must be at least 6 characters long';  //validation for password
   }
   
   if (!validateRequired(formData.confirmPassword)) {
     errors.confirmPassword = 'Please confirm your password';
   } else if (!validatePasswordMatch(formData.password, formData.confirmPassword)) {
-    errors.confirmPassword = 'Passwords do not match';
+    errors.confirmPassword = 'Passwords do not match';  //check if password and confirm password are same
   }
   
   return errors;

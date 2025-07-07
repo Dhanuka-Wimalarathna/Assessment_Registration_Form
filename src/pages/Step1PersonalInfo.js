@@ -18,7 +18,6 @@ const Step1PersonalInfo = () => {
     const { name, value } = e.target;
     updateFormData({ [name]: value });
     
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' });
     }
@@ -35,7 +34,6 @@ const Step1PersonalInfo = () => {
     }
   };
 
-  // Check if step 1 is valid
   const isStep1Valid = () => {
     const validationErrors = validateStep1(formData);
     return Object.keys(validationErrors).length === 0;

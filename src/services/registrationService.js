@@ -2,18 +2,15 @@ import apiClient from '../api/apiClient';
 import { API_ENDPOINTS } from '../utils/constants';
 
 export const registrationService = {
-  // Register user
   register: async (userData) => {
     try {
-      // Prepare payload (exclude confirmPassword)
       const payload = {
         fullName: userData.fullName,
         email: userData.email,
-        phone: userData.phone || undefined, // Only include if not empty
+        phone: userData.phone || undefined,
         password: userData.password
       };
 
-      // Remove undefined fields
       Object.keys(payload).forEach(key => 
         payload[key] === undefined && delete payload[key]
       );
