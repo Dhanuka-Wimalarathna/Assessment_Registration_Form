@@ -42,9 +42,6 @@ const Step1PersonalInfo = () => {
   return (
     <div className="form-step">
       <h2 className="step-title">Personal Information</h2>
-      <p className="step-description">
-        Please provide your basic information to get started.
-      </p>
       
       <div className="form-fields">
         <Input

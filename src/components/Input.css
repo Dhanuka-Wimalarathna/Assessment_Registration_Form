@@ -39,15 +39,6 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.input--error {
-  border-color: #ef4444;
-}
-
-.input--error:focus {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
-
 .password-toggle {
   position: absolute;
   right: 0.75rem;
@@ -79,11 +70,6 @@
 .password-toggle .material-icons {
   font-size: 20px;
   user-select: none;
-}
-
-.password-toggle svg {
-  width: 1.25rem;
-  height: 1.25rem;
 }
 
 .error-message {

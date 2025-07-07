@@ -88,9 +88,6 @@ const Step2Security = () => {
   return (
     <div className="form-step">
       <h2 className="step-title">Security</h2>
-      <p className="step-description">
-        Create a secure password for your account.
-      </p>
       
       <div className="form-fields">
         <Input

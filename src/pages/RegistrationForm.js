@@ -25,9 +25,6 @@ const RegistrationForm = () => {
       <div className="registration-card">
         <div className="registration-header">
           <h1 className="registration-title">Create Your Account</h1>
-          <p className="registration-subtitle">
-            Join us today and start your journey
-          </p>
         </div>
         
         <ProgressIndicator currentStep={currentStep} />
